@@ -1,0 +1,7 @@
+# Funcao de imprimir textos e informacoes no terminal
+print("Hello, world!)"
+
+# Comentario simples
+""" 
+Comentario multilinear
+"""
