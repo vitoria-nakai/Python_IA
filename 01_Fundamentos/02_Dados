@@ -1,0 +1,19 @@
+# Há 4 tipos de dados principais
+
+# String
+name = "Vitória"
+
+# Interger
+year = 2026
+
+# Float
+weight = 65.8
+
+# Booleano
+be_adult = True
+
+#Para saber o tipo de variável, usa-se a função type()
+print(type(name))
+print(type(year))
+print(type(be_adult))
+print(type(weight))
