@@ -1,0 +1,26 @@
+# Utilizando o input
+
+name = input("Qual é o nome do filme?")
+yearLauch = input("Qual o ano de lançamento?")
+noteMovie = input("Qual a nota do filme?")
+
+
+print(name)
+print(yearLauch)
+print(noteMovie)
+
+# O input sempre atribuirá valor de string
+
+print(type(name))
+print(type(yearLauch))
+print(type(noteMovie))
+
+# Pode-se fazer a conversão para ajustar os tipos de variáveis
+# Essas funções não alteram a variável original, apenas retornam ela em outro tipo
+
+yearLauch = int(yearLauch)
+noteMovie = float(noteMovie)
+
+print(type(name))
+print(type(yearLauch))
+print(type(noteMovie))
