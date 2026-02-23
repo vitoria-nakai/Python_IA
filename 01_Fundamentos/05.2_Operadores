@@ -1,0 +1,30 @@
+"""
+Você quer um sistema que te avise se o seu Husky está comendo a quantidade ideal.
+Se ele comer menos de 400g ou mais de 600g por dia, o programa acende um alerta.
+"""
+
+while True:
+    print("---------- SENSOR DE SAÚDE DO DOG ----------")
+    print()
+    choice = int(input("""Escolha o que quer fazer:
+                       0 - Desligar o sistema
+                       1 - Registrar a quantidade mínima e máxima de ração diária
+                       2 - Analisar a quantidade de ração de hoje
+                       Ação: """))
+    if choice == 0:
+        print("Sistema está desligando ...")
+        break
+    elif choice == 1:
+        min = round(float(input("Digite a quantidade mínima em gramas de ração por dia: ")), 2)
+        max = round(float(input("Digite a quantidade máxima em gramas de ração por dia:")), 2)
+        print("Intervalo de quantidade ideal de ração atualizado.")
+    elif choice == 2:
+        qtd = round(float(input("Digite a quantidade de ração consumida hoje: ")), 2)
+        if qtd < min:
+            print("Atenção! Seu dog está comendo menos do que deveria.")
+        elif qtd > max:
+            print("Atenção! Seu dog está comendo mais do que deveria.")
+        else:
+            print("Hoje, seu dog está comendo a quantidade ideal de ração.")
+    else:
+        print("Ação não reconhecida. Tente novamente.")
