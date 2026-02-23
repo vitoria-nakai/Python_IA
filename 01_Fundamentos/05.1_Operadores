@@ -1,0 +1,74 @@
+"""
+Você organizou um churrasco, comprou carne, bebidas e carvão.
+Agora precisa calcular quanto cada um deve, mas quer aplicar um 
+"desconto" para quem não bebeu.
+"""
+
+listProduct = {}
+finalCost = 0
+listGuest = {}
+
+while True:
+    print("---------- DIVISOR DE CHURRASCO ----------")
+    print()
+    choice = int(input("""O que quer fazer?
+          0 - Desligar o sistema
+          1 - Registrar um produto
+          2 - Registrar convidado
+          3 - (Re)definir o desconto para o convidado que não bebeu
+          4 - Determinar o custo final para cada convidado
+            ação: """))
+    if choice == 0:
+        print("""Finalizando o programa ...
+              
+              
+              Obrigada pela atenção!""")
+        break
+    elif choice == 1:
+        product = input("Digite o nome do produto: ")
+        cost = float(input("Digite o preço do produto: "))
+        print("Registrando o produto ...")
+        listProduct[product] = cost
+        finalCost += cost
+    elif choice == 2:
+        guest = input("Qual o nome do convidado que quer registrar? ")
+        drunk = input("Ele(a) bebeu no churrasco?" )
+        print("Registrando o convidado ...")
+        if drunk.lower() != "sim" and drunk.lower() != "não":
+            print("Resposta diferente de Sim e Não. Faça novamente.")
+            continue
+        listGuest[guest] = drunk.lower()
+    elif choice == 3:
+        discount = float(input("Digite o novo valor do desconto(50% = 0.5): "))
+    else:
+        print("Determinando o custo final para cada convidado ...")
+        countDrunk = 0
+
+
+        for guest in listGuest:
+            if listGuest[guest] == "sim":
+                countDrunk += 1
+
+        
+        countNoDrunk = len(listGuest.items()) - countDrunk
+
+        peso = countDrunk * 1 + countNoDrunk * (1 - discount)
+
+        costDrunk = round(finalCost / peso, 2)
+        costNoDrunk = round((finalCost / peso) * (1 - discount), 2)
+                
+
+        print(f"""--- RELATÓRIO DE CUSTOS ---
+              
+            Produtos:
+            {listProduct.items()}
+            
+            Custo final: {finalCost}
+            
+            Lista de convidados e suas dívidas individuais: """)
+        for guest in listGuest:
+            print(guest)
+            if listGuest[guest] == "sim":   
+                print(costDrunk)
+            else:
+                print(costNoDrunk)
