@@ -1,0 +1,14 @@
+"""
+Você só vai sair para correr se não estiver chovendo e se 
+sua meta de estudos do dia já tiver sido batida.
+"""
+
+
+print("---------- POSSO CORRER? ----------")
+print()
+rain = input("Está chovendo?(True - Sim ou False - Não)") == "True"
+study = input("Já bateu a sua meta de estudos?(True - Sim ou False - Não)") == "True"
+if rain == False and study == True:
+    print("Então, você pode sair para correr. Aproveite!")
+else:
+    print("Não saia para correr. Aproveite para fazer outra coisa em casa.")
