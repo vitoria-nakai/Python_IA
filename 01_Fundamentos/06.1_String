@@ -1,0 +1,17 @@
+"""
+Você foi contratado para criar um pequeno sistema que decide 
+se um atleta deve focar em treino de velocidade ou treino de 
+resistência, com base no nome do treino e na distância percorrida.
+"""
+
+line = "-"
+print(f"{line*10} ANALISTA DE TREINAMENTO {line*10}")
+print()
+name = input("Qual é o nome do treino?")
+m = int(input("Qual a distância total em metros?"))
+print("Analisando ...")
+print(line*30)
+if "explosão" in name.lower() or m > 1000:
+    print("Foque no treino de velocidade.")
+elif "explosão" not in name.lower() and m < 1000:
+    print("Foque no treino de resistência.")
