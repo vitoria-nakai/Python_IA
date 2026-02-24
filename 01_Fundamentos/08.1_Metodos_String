@@ -1,0 +1,29 @@
+"""
+Você recebeu uma lista de produtos vinda de um banco de dados
+antigo. Os dados estão bagunçados, com espaços extras,
+caracteres especiais errados e formataçoes inconsistentes.
+"""
+
+produto_raw = "   nOtEbOOk dELL g15;pREçO:5500;estoque:15   "
+
+Formatacao = produto_raw.strip(" ").lower().replace(";", "|").title().split('|')
+
+safe = produto_raw.count(":") >= 2
+
+if safe:
+    cabecalho = "RELATÓRIO DE PRODUTO"
+    print(cabecalho.center(40,"="))
+    print(f"""Produto: {Formatacao[0]}
+    Detalhes: {Formatacao[1]} | {Formatacao[2]}""")
+    line = "="
+    print(line*40)
+else:
+    print("Os campos de 'preço' ou de 'estoque' não estão presentes. Revise e tente novamente.")
+
+""""
+RESULTADO FINAL:
+==========RELATÓRIO DE PRODUTO==========
+Produto: Notebook Dell G15
+Detalhes: Preço:5500 | Estoque:15
+========================================
+"""
