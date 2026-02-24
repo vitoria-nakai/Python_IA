@@ -1,0 +1,21 @@
+"""
+Imagine que você recebeu uma string bruta de um sistema
+de segurança antigo. O sistema gera uma mensagem compactada
+que contém o ID do usuário, a Data e um Código de status, tudo grudado.
+
+STRING: USR9422_20260224_SUCCESS
+
+Sua missão é criar um script que use slicing para extrair as 
+informações e apresentá-las de forma legível.
+"""
+print("STRING RECEBIDA = USR9422_20260224_SUCCESS")
+log_data = "USR9422_20260224_SUCCESS"
+ID = log_data[:7]
+Data = log_data[8:16]
+Status = log_data[17:]
+ID_reversed = ID[::-1]
+Ano = log_data[8:12]
+print()
+print(f"ID - {ID_reversed}")
+print(f"Data - {Data}")
+print(f"Status - {Status}")
